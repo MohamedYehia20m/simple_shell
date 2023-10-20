@@ -3,7 +3,7 @@
 /**
  * split_string - splits a string into words
  * @str: string to split
- * @delimiter: delimiter
+ * @delim: delimiter
  * Return: NULL on error
  */
 char **split_string(char *str, char *delim)
