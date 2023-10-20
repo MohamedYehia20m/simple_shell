@@ -12,6 +12,6 @@ int main(int argc, char **argv)
 
 	not_interactive(argc, argv, info);
 	init_env(info);
-	shell_exec(info, argv);
+	exec(info, argv);
 	return (EXIT_SUCCESS);
 }

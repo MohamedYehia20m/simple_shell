@@ -109,7 +109,7 @@ int not_interactive(int argc, char **argv, info_t info[]);
 int find_builtin_command(info_t *);
 void find_command(info_t *);
 void fork_command(info_t *);
-int shell_exec(info_t *, char **);
+int exec(info_t *, char **);
 
 /* path handling */
 int is_cmd(info_t *, char *);

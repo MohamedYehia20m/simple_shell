@@ -1,13 +1,13 @@
 #include "shell.h"
 
 /**
- * shell_exec - executes a command
+ * exec - executes a command
  * @info: the parameter & return info struct
  * @argv: the command
  *
  * Return: builtin_ret
 */
-int shell_exec(info_t *info, char **argv)
+int exec(info_t *info, char **argv)
 {
 	ssize_t r = 0;
 	int builtin_ret = 0;
