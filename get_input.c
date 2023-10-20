@@ -19,16 +19,16 @@ ssize_t get_input(info_t *info)
 		return (-1);
 	if (len)
 	{
-		j = i;	
+		j = i;
 		current_char_ptr = input_buf + i;
-		handle_sep(info, input_buf, &j, i, len);		
-		while (j < len)					
+		handle_sep(info, input_buf, &j, i, len);
+		while (j < len)
 		{
 			if (detect_command_separator(info, input_buf, &j))
 				break;
 			j++;
 		}
-		i = j + 1;			
+		i = j + 1;
 		if (i >= len)
 		{
 			i = len = 0;

@@ -19,8 +19,11 @@ int find_builtin_command(info_t *info)
 		{NULL, NULL}};
 
 	for (index = 0; builtin_list[index].type; index++)
-		if (_strcmp(info->argv[0], builtin_list[index].type) == 0)								{					
+		if (_strcmp(info->argv[0], builtin_list[index].type) == 0)
+		{
 			info->line_count++;
-			builtin_ret = builtin_list[index].func(info);										break;														}
+			builtin_ret = builtin_list[index].func(info);
+			break;
+		}
 	return (builtin_ret);
 }
