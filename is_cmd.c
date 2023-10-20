@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * is_cmd - function to check if a file is a command
+ * is_command - function to check if a file is a command
  * @info: pointer to info_t struct
  * @path: path to check
  *
