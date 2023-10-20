@@ -14,10 +14,9 @@ int _unsetenv(info_t *info, char *var)
 	size_t i = 0;
 	char *ptr;
 
-	if (!node || !var)
+	if (!var || !node)
 		return (0);
-	while (node)
-	{
+	do {
 		ptr = find_prefix(node->str, var);
 		if (ptr && *ptr == '=')
 		{
@@ -28,6 +27,6 @@ int _unsetenv(info_t *info, char *var)
 		}
 		node = node->next;
 		i++;
-	}
+	} while (node);
 	return (info->env_changed);
 }
