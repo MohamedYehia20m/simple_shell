@@ -3,7 +3,7 @@
 /**
  * count_words - counts the number of words in a string
  * @str: string to count
- * @delimiter: delimiter
+ * @delim: delimiter
  *
  * Return: number of words
  */
