@@ -10,7 +10,7 @@ int shell_setenv(info_t *info)
 {
 	if (info->argc != 3)
 	{
-		print_string("Incorrect number of arguments\n");
+		_putserr("Incorrect number of arguments\n");
 		return (1);
 	}
 	if (_setenv(info, info->argv[1], info->argv[2]))

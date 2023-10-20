@@ -1,12 +1,12 @@
 #include "shell.h"
 
 /**
- * print_string - prints an input string
+ * _putserr - prints an input string to stderr
  * @str: the string to be printed
  *
  * Return: void
 */
-void print_string(char *str)
+void _putserr(char *str)
 {
 	int i = 0;
 
@@ -14,7 +14,7 @@ void print_string(char *str)
 		return;
 	while (str[i] != '\0')
 	{
-		print_char(str[i]);
+		_putcharerr(str[i]);
 		i++;
 	}
 }

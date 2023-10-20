@@ -12,7 +12,7 @@ int shell_unsetenv(info_t *info)
 
 	if (info->argc == 1)
 	{
-		print_string("Too few arguments.\n");
+		_putserr("Too few arguments.\n");
 		return (1);
 	}
 	for (i = 1; i <= info->argc; i++)

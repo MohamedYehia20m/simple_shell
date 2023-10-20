@@ -117,8 +117,8 @@ char *dup_chars(const char *, int, int);
 char *search_path(info_t *, char *, char *);
 
 /* printing functions */
-void print_string(char *);
-int print_char(char);
+void _putserr(char *);
+int _putcharerr(char);
 
 /* string overwritten functions */
 int _strlen(char *);

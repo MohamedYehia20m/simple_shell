@@ -38,7 +38,7 @@ int shell_cd(info_t *info)
 	if (chdir_ret == -1)
 	{
 		print_error(info, "can't cd to ");
-		print_string(info->argv[1]), print_char('\n');
+		_putserr(info->argv[1]), _putcharerr('\n');
 	}
 	else
 	{

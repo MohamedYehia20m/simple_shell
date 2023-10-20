@@ -14,7 +14,7 @@ int print_decimal(int input, int fd)
 	unsigned int _abs_, current;
 
 	if (fd == STDERR_FILENO)
-		_putchar = print_char;
+		_putchar = _putcharerr;
 	if (input < 0)
 	{
 		_abs_ = -input;

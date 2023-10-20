@@ -21,11 +21,11 @@ int not_interactive(int argc, char **argv, info_t info[])
 				exit(PERMISSION_DENIED);
 			if (errno == ENOENT)
 			{
-				print_string(argv[0]);
-				print_string(": 0: Can't open ");
-				print_string(argv[1]);
-				print_char('\n');
-				print_char(BUFFER_FLUSH);
+				_putserr(argv[0]);
+				_putserr(": 0: Can't open ");
+				_putserr(argv[1]);
+				_putcharerr('\n');
+				_putcharerr(BUFFER_FLUSH);
 				exit(COMMAND_NOT_FOUND);
 			}
 			return (EXIT_FAILURE);

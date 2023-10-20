@@ -1,12 +1,12 @@
 #include "shell.h"
 
 /**
- * print_char - prints an input string
+ * print_char - prints an input char to stderr
  * @c: The character to print
  *
  * Return: On success 1.
 */
-int print_char(char c)
+int _putcharerr(char c)
 {
 	static int i;
 	static char buffer[WRITE_BUFFER_SIZE];

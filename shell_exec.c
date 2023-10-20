@@ -17,7 +17,7 @@ int exec(info_t *info, char **argv)
 		reset_info(info);
 		if (interactive(info))
 			_puts("$ ");
-		print_char(BUFFER_FLUSH);
+		_putcharerr(BUFFER_FLUSH);
 		r = get_input(info);
 		if (r != -1)
 		{
