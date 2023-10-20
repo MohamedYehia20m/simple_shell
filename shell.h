@@ -1,6 +1,10 @@
 #ifndef SHELL_H
 #define SHELL_H
 
+
+/******************************************************/
+/*********************** Includes *********************/
+/******************************************************/
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -15,6 +19,9 @@
 #include <ctype.h>
 
 
+/******************************************************/
+/**************** Macros Definition *******************/
+/******************************************************/
 #define BUFFER_FLUSH (-1)
 
 #define NORMAL_COMMAND 0
@@ -35,8 +42,36 @@
 #define S_IFREG 0100000
 #endif
 
+#define INFO_INIT \
+{\
+	NULL,\
+	NULL,\
+	NULL,\
+	0,\
+	0,\
+	0,\
+	0,\
+	NULL,\
+	NULL,\
+	NULL,\
+	NULL,\
+	0,\
+	0,\
+	NULL,\
+        0,\
+	0\
+}
+
+
+/******************************************************/
+/******************* Extern variables *****************/
+/******************************************************/
 extern char **environ;
 
+
+/******************************************************/
+/*********************** Structures *******************/
+/******************************************************/
 /**
  * struct list_str - list of strings
  * @num: the list number
@@ -89,10 +124,6 @@ typedef struct parsed_info
 	int file_descriptor;
 } info_t;
 
-#define INFO_INIT \
-{NULL, NULL, NULL, 0, 0, 0, 0, NULL, NULL, NULL, NULL, 0, 0, NULL, \
-	0, 0}
-
 /**
  * struct builtin - function selects suitable builtin function
  * @type: type of builtin
@@ -104,22 +135,23 @@ typedef struct builtin
 	int (*func)(info_t *);
 } builtin_table;
 
+
+/******************************************************/
+/*************** Functions Prototypes *****************/
+/******************************************************/
 int not_interactive(int argc, char **argv, info_t info[]);
 
 int find_builtin_command(info_t *);
 void find_command(info_t *);
 void fork_command(info_t *);
 int exec(info_t *, char **);
-
 /* path handling */
 int is_command(info_t *, char *);
 char *dup_chars(const char *, int, int);
 char *search_path(info_t *, char *, char *);
-
 /* printing functions */
 void _putserr(char *);
 int _putcharerr(char);
-
 /* string overwritten functions */
 int _strlen(char *);
 int _strcmp(char *, char *);
@@ -132,17 +164,14 @@ int _putchar(char);
 char *_strncpy(char *, char *, int);
 char *_strncat(char *, char *, int);
 char *_strchr(char *, char);
-
 /* string tokenization functions */
 char **split_string(char *, char *);
 int count_words(char *str, char *delimiter);
-
 /* memory functions */
 char *_memset(char *, char, unsigned int);
 void string_free(char **);
 void *_realloc(void *, unsigned int, unsigned int);
 int pointer_free(void **);
-
 /* validation functions */
 int interactive(info_t *);
 int is_delim(char, char *);
@@ -167,7 +196,6 @@ void handle_sigint_signal(int);
 void reset_info(info_t *);
 void initialize_info(info_t *, char **);
 void deallocate_info(info_t *, int);
-
 /* environment functions */
 char *_getenv(info_t *, const char *);
 int shell_env(info_t *);
@@ -177,7 +205,6 @@ int init_env(info_t *);
 char **get_environ(info_t *);
 int _unsetenv(info_t *, char *);
 int _setenv(info_t *, char *, char *);
-
 /* liked list functions */
 list_t *add_node_end(list_t **, const char *, int);
 size_t print_list_str(const list_t *);
@@ -187,7 +214,6 @@ size_t list_len(const list_t *);
 char **list_to_strings(list_t *);
 list_t *node_starts_with(list_t *, char *, char);
 ssize_t get_node_index(list_t *, list_t *);
-
 /* alias functions */
 int detect_command_separator(info_t *, char *, size_t *);
 void handle_sep(info_t *, char *, size_t *, size_t, size_t);
@@ -198,4 +224,4 @@ int unset_alias(info_t *, char *);
 int print_alias(list_t *);
 int set_alias(info_t *info, char *str);
 
-#endif
+#endif /* SHELL_H */
