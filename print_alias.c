@@ -2,21 +2,21 @@
 
 /**
  * print_alias - prints an alias string
- * @node: the alias node
+ * @P_node: the alias node pointer
  *
- * Return: Always 0
+ * Return: 0 OR 1
 */
-int print_alias(list_t *node)
+int print_alias(list_t *P_node)
 {
-	char *ptr = NULL, *a = NULL;
+	char *L_ptr = NULL, *m = NULL;
 
-	if (node)
+	if (P_node)
 	{
-		ptr = _strchr(node->str, '=');
-		for (a = node->str; a <= ptr; a++)
-			_putchar(*a);
+		L_ptr = _strchr(P_node->str, '=');
+		for (m = P_node->str; m <= L_ptr; m++)
+			_putchar(*m);
 		_putchar('\'');
-		_puts(ptr + 1);
+		_puts(L_ptr + 1);
 		_puts("'\n");
 		return (0);
 	}
