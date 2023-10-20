@@ -1,18 +1,18 @@
-#include "shell.h"
+#include "main.h"
 
 /**
- * _memset - fills a block of memory with a constant byte
- * @str: the pointer to the memory area
- * @value: the byte to fill *str with
- * @num: the amount of bytes to be filled
+ * _memset - fills memory with a constant byte.
+ * @s: the address of memory
+ * @b: the constant byte
+ * @n: the size of the memory to print
  *
- * Return: (str) a pointer to the memory area
-*/
-char *_memset(char *str, char value, unsigned int num)
+ * Return: pointer to char
+ */
+char *_memset(char *s, char b, unsigned int n)
 {
 	unsigned int i;
 
-	for (i = 0; i < num; i++)
-		str[i] = value;
-	return (str);
+	for (i = 0; i < n; i++)
+		s[i] = b;
+	return (s);
 }
