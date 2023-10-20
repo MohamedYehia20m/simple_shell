@@ -196,5 +196,6 @@ int variables_substitute(info_t *);
 int string_replace(char **, char *);
 int unset_alias(info_t *, char *);
 int print_alias(list_t *);
+int set_alias(info_t *info, char *str);
 
 #endif
