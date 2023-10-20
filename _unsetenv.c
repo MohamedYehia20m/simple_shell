@@ -4,9 +4,10 @@
  * _unsetenv - unset an environment variable
  * @info: Structure containing potential arguments.
  * @var: the string env var property
- * Return: 0  || env_changed
+ *
+ * Return: 0
+ *	OR value of env_changed
  */
-
 int _unsetenv(info_t *info, char *var)
 {
 	list_t *node = info->env;
