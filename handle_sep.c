@@ -10,7 +10,7 @@
  *
  * Return: void
  */
-void handle_sep(info_t *info, char *buf, size_t *ptr, size_t i, size_t len)
+void handle_sep(info_t *info, char *buffer, size_t *ptr, size_t i, size_t len)
 {
 	size_t j = *ptr;
 
@@ -18,7 +18,7 @@ void handle_sep(info_t *info, char *buf, size_t *ptr, size_t i, size_t len)
 	{
 		if (info->status)
 		{
-			buf[i] = 0;
+			buffer[i] = 0;
 			j = len;
 		}
 	}
@@ -26,7 +26,7 @@ void handle_sep(info_t *info, char *buf, size_t *ptr, size_t i, size_t len)
 	{
 		if (!info->status)
 		{
-			buf[i] = 0;
+			buffer[i] = 0;
 			j = len;
 		}
 	}

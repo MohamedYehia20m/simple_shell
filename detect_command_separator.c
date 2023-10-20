@@ -8,25 +8,25 @@
  *
  * Return: 1 if replaced, 0 otherwise
  */
-int detect_command_separator(info_t *info, char *buf, size_t *ptr)
+int detect_command_separator(info_t *info, char *buffer, size_t *ptr)
 {
 	size_t j = *ptr;
 
-	if (buf[j] == '|' && buf[j + 1] == '|')
+	if (buffer[j] == '|' && buffer[j + 1] == '|')
 	{
-		buf[j] = 0;
+		buffer[j] = 0;
 		j++;
 		info->command_buffer_type = LOGICAL_OR_COMMAND;
 	}
-	else if (buf[j] == '&' && buf[j + 1] == '&')
+	else if (buffer[j] == '&' && buffer[j + 1] == '&')
 	{
-		buf[j] = 0;
+		buffer[j] = 0;
 		j++;
 		info->command_buffer_type = LOGICAL_AND_COMMAND;
 	}
-	else if (buf[j] == ';')
+	else if (buffer[j] == ';')
 	{
-		buf[j] = 0;
+		buffer[j] = 0;
 		info->command_buffer_type = SEQUENTIAL_COMMAND;
 	}
 	else

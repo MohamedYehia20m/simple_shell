@@ -2,14 +2,14 @@
 
 /**
  * string_replace - replaces a string
- * @old_string: the old string
- * @new_string: the new string
+ * @old_bf: the old string
+ * @new_bf: the new string
  *
  * Return: 1 if replaced
  */
-int string_replace(char **old_string, char *new_string)
+int string_replace(char **old_bf, char *new_bf)
 {
-	free(*old_string);
-	*old_string = new_string;
+	free(*old_bf);
+	*old_bf = new_bf;
 	return (1);
 }
