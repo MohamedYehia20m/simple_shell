@@ -104,7 +104,7 @@ typedef struct builtin
 	int (*func)(info_t *);
 } builtin_table;
 
-int check_non_interactive(int argc, char **argv, info_t info[]);
+int not_interactive(int argc, char **argv, info_t info[]);
 
 int find_builtin_command(info_t *);
 void find_command(info_t *);

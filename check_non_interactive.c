@@ -1,14 +1,14 @@
 #include "shell.h"
 
 /**
- * check_non_interactive - checks if shell is non-interactive
+ * not_interactive - checks if shell is non-interactive
  * @argc: arg count
  * @argv: arg vector
  * @info: the parameter & return info struct
  *
  * Return: EXIT_FAILURE || EXIT_SUCCESS
  */
-int check_non_interactive(int argc, char **argv, info_t info[])
+int not_interactive(int argc, char **argv, info_t info[])
 {
 	int file_descriptor = 5;
 

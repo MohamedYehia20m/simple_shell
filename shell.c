@@ -10,8 +10,7 @@ int main(int argc, char **argv)
 {
 	info_t info[] = {INFO_INIT};
 
-	check_non_interactive(argc, argv, info);
-
+	not_interactive(argc, argv, info);
 	init_env_variables(info);
 	shell_exec(info, argv);
 	return (EXIT_SUCCESS);
