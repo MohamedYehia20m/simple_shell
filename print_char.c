@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * print_char - prints an input char to stderr
+ * _putcharerr - prints an input char to stderr
  * @c: The character to print
  *
  * Return: On success 1.
