@@ -7,6 +7,7 @@
  *
  * Return: A pointer to the prefix
  */
+
 char *find_prefix(const char *haystack, const char *prefix)
 {
 	while (*prefix)

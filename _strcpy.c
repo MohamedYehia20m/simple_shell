@@ -7,7 +7,8 @@
  *
  * Return: pointer to destination
 */
-char *_strcpy(char *destination, char *source)
+
+/*char *_strcpy(char *destination, char *source)
 {
 	int index = 0;
 
@@ -22,4 +23,16 @@ char *_strcpy(char *destination, char *source)
 	destination[index] = '\0';
 
 	return (destination);
+}*/
+char *_strcpy(char *dest, char *src)
+{
+	int i = 0;
+
+	while (*(src + i) != '\0')
+	{
+		*(dest + i) = *(src + i);
+		i++;
+	}
+	*(dest + i) = '\0';
+	return (dest);
 }
