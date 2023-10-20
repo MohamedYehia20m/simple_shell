@@ -73,6 +73,19 @@ extern char **environ;
 /*********************** Structures *******************/
 /******************************************************/
 /**
+ * struct list_str - list of strings
+ * @num: list number
+ * @str: the string
+ * @next: next node address
+ */
+typedef struct list_str
+{
+	int num;
+	char *str;
+	struct list_str *next;
+} list_t;
+
+/**
  * struct pcb_info - Structure for pcb
  * @arg: every Command Argument
  * @argv: every Command argument vector
@@ -121,19 +134,6 @@ typedef struct builtin
 	char *cmd;
 	int (*func)(info_t *);
 } builtin_t;
-
-/**
- * struct list_str - list of strings
- * @num: the list number
- * @str: the string
- * @next: the next node
- */
-typedef struct list_str
-{
-	int num;
-	char *str;
-	struct list_str *next;
-} list_t;
 
 
 /******************************************************/
