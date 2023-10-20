@@ -2,20 +2,20 @@
 
 /**
  * print_list_str - prints all elements of a list_t linked list
- * @node: pointer to first node
+ * @node: pointer to first node in the list
  *
- * Return: i number of elements
+ * Return: number of elements
 */
-size_t print_list_str(const list_t *node)
+size_t print_list_str(const list_t *L_node)
 {
-	size_t i = 0;
+	size_t elemCtr = 0;
 
-	while (node)
+	while (L_node)
 	{
-		_puts(node->str ? node->str : "(nil)");
+		_puts(L_node->str ? L_node->str : "(nil)");
 		_puts("\n");
-		node = node->next;
-		i++;
+		node = L_node->next;
+		elemCtr++;
 	}
-	return (i);
+	return (elemCtr);
 }
