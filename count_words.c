@@ -7,20 +7,20 @@
  *
  * Return: number of words
  */
-int count_words(char *str, char *delimiter)
+int count_words(char *str, char *delim)
 {
 	int i, words_count = 0;
 
 	if (str == NULL || str[0] == 0)
 		return (0);
 
-	if (delimiter == NULL)
-		delimiter = " ";
+	if (delim == NULL)
+		delim = " ";
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
-		if (!is_delim(str[i], delimiter) &&
-			(is_delim(str[i + 1], delimiter) || !str[i + 1]))
+		if (!is_delim(str[i], delim) &&
+			(is_delim(str[i + 1], delim) || !str[i + 1]))
 			words_count++;
 	}
 

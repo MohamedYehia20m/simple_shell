@@ -6,10 +6,10 @@
  * @delimiter: delimiter
  * Return: NULL on error
  */
-char **split_string(char *str, char *delimiter)
+char **split_string(char *str, char *delim)
 {
 	int i, j, k, m;
-	int words_count = count_words(str, delimiter);
+	int words_count = count_words(str, delim);
 	char **tokenized_str;
 
 	if (words_count == 0)
@@ -18,18 +18,18 @@ char **split_string(char *str, char *delimiter)
 	if (str == NULL || str[0] == 0)
 		return (NULL);
 
-	if (!delimiter)
-		delimiter = " ";
+	if (!delim)
+		delim = " ";
 
 	tokenized_str = malloc((1 + words_count) * sizeof(char *));
 	if (!tokenized_str)
 		return (NULL);
 	for (i = 0, j = 0; j < words_count; j++)
 	{
-		while (is_delim(str[i], delimiter))
+		while (is_delim(str[i], delim))
 			i++;
 		k = 0;
-		while (!is_delim(str[i + k], delimiter) && str[i + k])
+		while (!is_delim(str[i + k], delim) && str[i + k])
 			k++;
 		tokenized_str[j] = malloc((k + 1) * sizeof(char));
 		if (!tokenized_str[j])
