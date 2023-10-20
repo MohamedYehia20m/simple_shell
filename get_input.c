@@ -15,15 +15,12 @@ ssize_t get_input(info_t *info)
 
 	_putchar(BUFFER_FLUSH);
 	read_result = input_buffer(info, &input_buf, &len);
-
 	if (read_result == -1)
 		return (-1);
-
 	if (len)
 	{
 		j = i;	
 		current_char_ptr = input_buf + i;
-
 		handle_sep(info, input_buf, &j, i, len);		
 		while (j < len)					
 		{
@@ -38,7 +35,6 @@ ssize_t get_input(info_t *info)
 			info->command_buffer_type = NORMAL_COMMAND;
 		}
 		*arg_ptr = current_char_ptr;
-	
 		return (_strlen(current_char_ptr));
 	}
 	*arg_ptr = input_buf;
