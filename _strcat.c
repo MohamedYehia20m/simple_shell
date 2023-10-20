@@ -1,23 +1,18 @@
 #include "shell.h"
 
 /**
- * _strcat - concatenates two strings
- * @destination: dest string
- * @source: src string
- *
- * Return: pointer to dest
+* _strcat - concatenates two strings.
+* @dest: pointer to the first address of the destination string.
+* @src: pointer to the first address of the source string.
+*
+* Return: pointer to char
 */
-char *_strcat(char *destination, char *source)
+char *_strcat(char *dest, char *src)
 {
-	char *result = destination;
+	int i, destLen = _strlen(dest);
 
-	while (*destination)
-		destination++;
-
-	while (*source)
-		*destination++ = *source++;
-
-	*destination = *source;
-
-	return (result);
+	for (i = 0; src[i] != '\0'; i++, destLen++)
+		dest[destLen] = src[i];
+	dest[destLen] = '\0';
+	return (dest);
 }
