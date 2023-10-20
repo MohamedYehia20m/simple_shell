@@ -3,7 +3,7 @@
 /**
  * detect_command_separator - detects command separator
  * @info: the parameter struct
- * @buf: the buffer
+ * @buffer: the buffer
  * @ptr: the pointer
  *
  * Return: 1 if replaced, 0 otherwise
