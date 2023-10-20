@@ -1,17 +1,17 @@
 #include "shell.h"
 
 /**
- * variables_substitute - replaces vars in the tokenized string
- * @info: the parameter struct
+ * variables_substitute - replaces variables in the tokenized string
+ * @info: struct info
  *
  * Return: 0
  */
 int variables_substitute(info_t *info)
 {
-	int i = 0;
+	int i;
 	list_t *L_node;
 
-	while (info->argv[i])
+	for (i = 0; info->argv[i]; i++)
 	{
 		if (info->argv[i][0] != '$' || !info->argv[i][1])
 			continue;
@@ -42,7 +42,6 @@ int variables_substitute(info_t *info)
 			continue;
 		}
 		string_replace(&info->argv[i], _strdup(""));
-		i++;
 	}
 	return (0);
 }
