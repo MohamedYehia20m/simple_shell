@@ -11,7 +11,7 @@
  *	 the duplicated string.
  *	 NULL if insufficient memory was available
  */
-char *_strdup(char *str)
+char *_strdup(char const *str)
 {
 	int length = 0, i;
 	char *copy_str;
