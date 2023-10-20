@@ -17,7 +17,7 @@ char *search_path(info_t *info, char *path_list, char *command)
 		return (NULL);
 	if ((_strlen(command) > 2) && find_prefix(command, "./"))
 	{
-		if (is_cmd(info, command))
+		if (is_command(info, command))
 			return (command);
 	}
 	while (1)
@@ -32,7 +32,7 @@ char *search_path(info_t *info, char *path_list, char *command)
 				_strcat(new_path, "/");
 				_strcat(new_path, command);
 			}
-			if (is_cmd(info, new_path))
+			if (is_command(info, new_path))
 				return (new_path);
 			if (!path_list[index])
 				break;

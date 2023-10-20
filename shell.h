@@ -112,7 +112,7 @@ void fork_command(info_t *);
 int exec(info_t *, char **);
 
 /* path handling */
-int is_cmd(info_t *, char *);
+int is_command(info_t *, char *);
 char *dup_chars(const char *, int, int);
 char *search_path(info_t *, char *, char *);
 

@@ -7,7 +7,7 @@
  *
  * Return: 0 || 1
 */
-int is_cmd(info_t *info, char *path)
+int is_command(info_t *info, char *path)
 {
 	struct stat st;
 
