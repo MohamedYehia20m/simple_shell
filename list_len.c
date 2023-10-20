@@ -1,19 +1,20 @@
 #include "shell.h"
 
 /**
- * list_len - returns the length of a list
- * @node: pointer to first node
+ * list_len - returns the number of elements in a linked list_t list.
+ * @h: pointer to the list.
  *
- * Return: length of list
-*/
-size_t list_len(const list_t *node)
+ * Return: the number of nodes.
+ */
+size_t list_len(const list_t *h)
 {
-	size_t i = 0;
+	size_t ctr = 0;
+	list_t *l = (list_t *) h;
 
-	while (node)
+	while (l != NULL)
 	{
-		node = node->next;
-		i++;
+		ctr++;
+		l = l->next;
 	}
-	return (i);
+	return (ctr);
 }
