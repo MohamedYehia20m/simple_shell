@@ -3,15 +3,15 @@
 /**
  * deallocate_info - frees info struct fields
  * @info: info struct address
- * @all: true if freeing all fields
+ * @field: true if freeing all fields
  */
 
-void deallocate_info(info_t *info, int all)
+void deallocate_info(info_t *info, int field)
 {
 	string_free(info->argv);
 	info->argv = NULL;
 	info->path = NULL;
-	if (all)
+	if (field)
 	{
 		if (!info->command_buffer)
 			free(info->arg);

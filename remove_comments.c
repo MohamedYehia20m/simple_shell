@@ -2,18 +2,18 @@
 
 /**
  * remove_comments - removes comments from a string
- * @buf: string
+ * @buffer: string
  *
  * Return: void
 */
-void remove_comments(char *buf)
+void remove_comments(char *buffer)
 {
 	int i;
 
-	for (i = 0; buf[i] != '\0'; i++)
-		if (buf[i] == '#' && (!i || buf[i - 1] == ' '))
+	for (i = 0; buffer[i] != '\0'; i++)
+		if (buffer[i] == '#' && (!i || buffer[i - 1] == ' '))
 		{
-			buf[i] = '\0';
+			buffer[i] = '\0';
 			break;
 		}
 }
