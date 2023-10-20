@@ -1,19 +1,19 @@
 #include "shell.h"
 
 /**
- * _strlen - returns the length of a string
- * @str: the string
+ * _strlen - returns the length of a string.
+ * @s: pointer to the first address of the string.
  *
- * Return: the length
-*/
-int _strlen(char *str)
+ * Return: length of the given string.
+ */
+int _strlen(char *s)
 {
-	int i = 0;
+	int strlen = 0;
 
-	if (!str)
-		return (0);
-
-	while (*str++)
-		i++;
-	return (i);
+	while (*s != '\0')
+	{
+		strlen++;
+		s++;
+	}
+	return (strlen);
 }
