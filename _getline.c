@@ -7,7 +7,7 @@
  * @line_len: pointer to length
  *
  * Return: number of bytes read
- * 		OR -1
+ *		OR -1
  */
 int _getline(info_t *info, char **line_ptr, size_t *line_len)
 {
