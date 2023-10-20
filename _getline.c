@@ -1,13 +1,14 @@
 #include "shell.h"
 
 /**
- * _getline - reads input from stdin
+ * _getline - reads input from user
  * @info: pointer to info struct
  * @line_ptr: pointer to char buffer
  * @line_len: pointer to length
- * Return: number of bytes read || -1
+ *
+ * Return: number of bytes read
+ * 		OR -1
  */
-
 int _getline(info_t *info, char **line_ptr, size_t *line_len)
 {
 	static char buffer[READ_BUFFER_SIZE];
