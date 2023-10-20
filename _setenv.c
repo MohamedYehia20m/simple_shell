@@ -1,13 +1,13 @@
 #include "shell.h"
 
 /**
- * _setenv - Initialize a new environment variable,
+ * _setenv - Initialize a new environment variable.
  * @info: Structure containing potential arguments.
- * @var: the string env var property
- * @value: the string env var value
+ * @var: string enviroment variable property
+ * @value: string enviroment variable value
+ *
  * Return: 0 on success, 1 if malloc fails
  */
-
 int _setenv(info_t *info, char *var, char *value)
 {
 	char *buffer = NULL;
