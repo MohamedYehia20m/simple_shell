@@ -173,7 +173,7 @@ char *_getenv(info_t *, const char *);
 int shell_env(info_t *);
 int shell_setenv(info_t *);
 int shell_unsetenv(info_t *);
-int init_env_variables(info_t *);
+int init_env(info_t *);
 char **get_environ(info_t *);
 int _unsetenv(info_t *, char *);
 int _setenv(info_t *, char *, char *);

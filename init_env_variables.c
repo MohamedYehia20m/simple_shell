@@ -1,12 +1,12 @@
 #include "shell.h"
 
 /**
- * init_env_variables - Populates the environment linked list.
+ * init_env - Populates the environment linked list.
  * @info: Structure containing potential arguments.
  * Return: Always 0.
  */
 
-int init_env_variables(info_t *info)
+int init_env(info_t *info)
 {
 	list_t *node = NULL;
 	size_t i;
