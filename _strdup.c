@@ -11,20 +11,19 @@
  *	 the duplicated string.
  *	 NULL if insufficient memory was available
  */
-char *_strdup(char const *str)
+char *_strdup(const char *str)
 {
-	int length = 0, i;
-	char *copy_str;
+	int length = 0;
+	char *result;
 
 	if (str == NULL)
 		return (NULL);
-	/* string length calculation */
-	while (str[length] != '\0')
+	while (*str++)
 		length++;
-	copy_str = malloc(sizeof(char) * length + 1);
-	if (copy_str == NULL)
+	result = malloc(sizeof(char) * (length + 1));
+	if (!result)
 		return (NULL);
-	for (i = 0; i < length; i++)
-		copy_str[i] = str[i];
-	return (copy_str);
+	for (length++; length--;)
+		result[length] = *--str;
+	return (result);
 }
