@@ -7,12 +7,13 @@
  *
  * Return: A pointer to the char
 */
-char *_strchr(char *str, char c)
-{
-	do {
-		if (*str == c)
-			return (str);
-	} while (*str++ != '\0');
 
-	return (NULL);
+char *_strchr(char *s, char c)
+{
+	while (*(s++) != '\0')
+	{
+		if (*(s) == c)
+			return (s);
+	}
+	return ('\0');
 }

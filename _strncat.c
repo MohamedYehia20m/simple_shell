@@ -7,23 +7,22 @@
  * @num: number of characters
  *
  * Return: pointer to destination
-*/
-char *_strncat(char *dest, char *src, int num)
-{
-	int i, j;
-	char *str = dest;
+ */
 
-	i = 0;
-	j = 0;
-	while (dest[i] != '\0')
+char *_strncat(char *dest, char *src, int n)
+{
+	int i = 0;
+	int j = 0;
+
+	while (*(dest + i) != '\0')
 		i++;
-	while (src[j] != '\0' && j < num)
+	while (*(src + j) != '\0' && j != n)
 	{
-		dest[i] = src[j];
+		*(dest + i) = *(src + j);
 		i++;
 		j++;
 	}
-	if (j < num)
-		dest[i] = '\0';
-	return (str);
+	if (j != n)
+		*(dest + i) = '\0';
+	return (dest);
 }

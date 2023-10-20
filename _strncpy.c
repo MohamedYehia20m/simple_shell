@@ -7,26 +7,21 @@
  * @num: number of characters
  *
  * Return: pointer to destination
-*/
-char *_strncpy(char *dest, char *src, int num)
-{
-	int i, j;
-	char *str = dest;
+ */
 
-	i = 0;
-	while (src[i] != '\0' && i < num - 1)
+char *_strncpy(char *dest, char *src, int n)
+{
+	int i = 0;
+
+	while (*(src + i) != '\0' && i != n)
 	{
-		dest[i] = src[i];
+		*(dest + i) = *(src + i);
 		i++;
 	}
-	if (i < num)
+	while (i != n)
 	{
-		j = i;
-		while (j < num)
-		{
-			dest[j] = '\0';
-			j++;
-		}
+		*(dest + i) = '\0';
+		i++;
 	}
-	return (str);
+	return (dest);
 }
