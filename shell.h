@@ -58,7 +58,7 @@
 	0,\
 	0,\
 	NULL,\
-        0,\
+	0,\
 	0\
 }
 
@@ -73,38 +73,25 @@ extern char **environ;
 /*********************** Structures *******************/
 /******************************************************/
 /**
- * struct list_str - list of strings
- * @num: the list number
- * @str: the string
- * @next: the next node
- */
-typedef struct list_str
-{
-	int num;
-	char *str;
-	struct list_str *next;
-} list_t;
-
-/**
- * struct parsed_info - Structure for passing information to functions
- * @arg: Command argument
- * @argv: Command argument vector
+ * struct pcb_info - Structure for pcb
+ * @arg: every Command Argument
+ * @argv: every Command argument vector
  * @path: Path
- * @line_count: Line count
+ * @line_count: Lines count
  * @error_num: Error number
- * @env_changed: Flag indicating if the environment has changed
- * @status: Status
- * @command_buffer: Command buffer
- * @command_buffer_type: Type of command buffer
- * @file_name: File name
+ * @env_changed: Flag for /environment state
+ * @status: the Status
+ * @command_buffer: every Command buffer
+ * @command_buffer_type: Type of the buffer
+ * @file_name: the File name
  * @env: Environment
  * @alias: Alias
  * @environ: Environment
- * @argc: Argument count
- * @line_count_flag: Line count flag
- * @file_descriptor: File descriptor
+ * @argc: the Argument count
+ * @line_count_flag: Lines count flag
+ * @file_descriptor: the File descriptor
  */
-typedef struct parsed_info
+typedef struct pcb_info
 {
 	char *arg;
 	char **argv;
@@ -125,15 +112,28 @@ typedef struct parsed_info
 } info_t;
 
 /**
- * struct builtin - function selects suitable builtin function
- * @type: type of builtin
- * @func: selected builtin function
+ * struct builtin - holds the builtin string and related function
+ * @cmd: command
+ * @func: function
  */
 typedef struct builtin
 {
-	char *type;
+	char *cmd;
 	int (*func)(info_t *);
-} builtin_table;
+} builtin_t;
+
+/**
+ * struct list_str - list of strings
+ * @num: the list number
+ * @str: the string
+ * @next: the next node
+ */
+typedef struct list_str
+{
+	int num;
+	char *str;
+	struct list_str *next;
+} list_t;
 
 
 /******************************************************/
