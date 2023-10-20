@@ -15,7 +15,7 @@ char *_getenv(info_t *info, const char *name)
 	while (node)
 	{
 		ptr = find_prefix(node->str, name);
-		if (ptr && *ptr)	
+		if (ptr && *ptr)
 			return (ptr);
 		node = node->next;
 	}
