@@ -24,8 +24,7 @@ int _setenv(info_t *info, char *var, char *value)
 	_strcat(buffer, "=");
 	_strcat(buffer, value);
 	node = info->env;
-	while (node)
-	{
+	do {
 		ptr = find_prefix(node->str, var);
 		if (ptr && *ptr == '=')
 		{
@@ -35,7 +34,7 @@ int _setenv(info_t *info, char *var, char *value)
 			return (0);
 		}
 		node = node->next;
-	}
+	} while (node);
 	add_node_end(&(info->env), buffer, 0);
 	free(buffer);
 	info->env_changed = 1;
