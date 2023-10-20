@@ -3,7 +3,7 @@
 /**
  * handle_sep - handles command separator
  * @info: the parameter struct
- * @buf: the buffer
+ * @buffer: the buffer
  * @ptr: the pointer
  * @i: the index
  * @len: the length
