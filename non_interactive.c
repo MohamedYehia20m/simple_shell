@@ -1,12 +1,13 @@
 #include "shell.h"
 
 /**
- * not_interactive - checks if shell is non-interactive
- * @argc: arg count
- * @argv: arg vector
- * @info: the parameter & return info struct
+ * not_interactive - checks if the shell is non-interactive
+ * @argc: argument count
+ * @argv: argument vector
+ * @info: info struct
  *
- * Return: EXIT_FAILURE || EXIT_SUCCESS
+ * Return: EXIT_FAILURE Code
+ *		OR EXIT_SUCCESS Code
  */
 int not_interactive(int argc, char **argv, info_t info[])
 {
